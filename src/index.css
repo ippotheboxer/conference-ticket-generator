@@ -11,6 +11,7 @@
     --color-neutral-900: hsl(248, 70%, 10%);
     --color-orange-500: hsl(7, 88%, 67%);
     --color-orange-700: hsl(7, 71%, 60%);
+    --color-black: #000;
 }
 
 @layer components {
