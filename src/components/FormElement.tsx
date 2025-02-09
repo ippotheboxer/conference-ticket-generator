@@ -1,5 +1,5 @@
 import React from 'react';
-import Label from './label';
+import Label from './Label';
 
 interface formElementProps {
     title: string,
@@ -16,7 +16,7 @@ const FormElement: React.FC<formElementProps> = ({ title, htmlFor, placeholder, 
         <input 
         type={type}  
         placeholder={placeholder} 
-        className='mt-1 w-full text-neutral bg-neutral/10 p-2 rounded-md border border-neutral-500 inconsolata-medium' 
+        className='mt-2 w-full text-neutral bg-neutral/10 hover:bg-neutral/20 hover:cursor-pointer p-2 rounded-md border border-neutral-500 inconsolata-medium' 
         accept={accept} />
     </>
   );

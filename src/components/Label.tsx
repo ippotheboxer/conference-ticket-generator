@@ -7,7 +7,7 @@ interface formElementProps {
 
 const Label: React.FC<formElementProps> = ({ title, htmlFor }) => {
   return (
-    <label htmlFor={htmlFor} className='text-neutral-300 pt-4 text-base inconsolata-medium'>
+    <label htmlFor={htmlFor} className='text-neutral-300 pt-4 xl:text-lg text-base inconsolata-medium'>
         {title}
     </label>
   );

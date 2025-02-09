@@ -1,9 +1,9 @@
 import React from 'react';
 import logoImg from "../assets/images/logo-full.svg";
 
-const Header = () => {
+const Header:React.FC = () => {
   return (
-    <header className='pt-4 md:pt-8'>
+    <header className='pt-6 md:pt-8 pb-6 md:pb-8'>
       <img 
       src={logoImg} 
       alt="Logo with text Coding Conference" 
