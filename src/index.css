@@ -11,15 +11,13 @@
     --color-neutral-900: hsl(248, 70%, 10%);
     --color-orange-500: hsl(7, 88%, 67%);
     --color-orange-700: hsl(7, 71%, 60%);
+    --color-gradientOrange: hsl(7, 86%, 67%);
     --color-black: #000;
 }
 
 @layer components {
     .gradient-text {
-        background: hsl(7, 86%, 67%) to hsl(0, 0%, 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
+        @apply bg-clip-text inline-block text-transparent bg-gradient-to-r from-gradientOrange to-neutral  ;
     }
     .inconsolata-regular {
         font-family: "Inconsolata", serif;

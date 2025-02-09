@@ -2,22 +2,27 @@ import React from 'react';
 import Label from './Label';
 
 interface formElementProps {
-    title: string,
-    htmlFor: string,
-    type: string,
-    placeholder?: string,
-    accept?: string
+    value: string;
+    title: string;
+    type: string;
+    placeholder?: string;
+    accept?: string;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    name: string;
 }
 
-const FormElement: React.FC<formElementProps> = ({ title, htmlFor, placeholder, type, accept }) => {
+const FormElement: React.FC<formElementProps> = ({ value, name, title, placeholder, type, accept, onChange }) => {
   return (
     <>
-    <Label htmlFor={htmlFor} title={title} />
+    <Label title={title} htmlFor={name} />
         <input 
         type={type}  
         placeholder={placeholder} 
         className='mt-2 w-full text-neutral bg-neutral/10 hover:bg-neutral/20 hover:cursor-pointer p-2 rounded-md border border-neutral-500 inconsolata-medium' 
-        accept={accept} />
+        accept={accept}
+        onChange={onChange}
+        value={value}
+        name={name} />
     </>
   );
 }

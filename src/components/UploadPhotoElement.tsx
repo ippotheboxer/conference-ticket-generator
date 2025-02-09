@@ -5,10 +5,10 @@ import Label from './Label';
 
 interface formElementProps {
     title: string,
-    htmlFor: string
+    name: string
 }
 
-const UploadPhotoElement: React.FC<formElementProps> = ({  }) => {
+const UploadPhotoElement: React.FC<formElementProps> = ({ title, name }) => {
     const [image, setImage] = useState<string>("");
     const [imageFail, setImagefail] = useState<boolean>(false);
 
@@ -25,7 +25,7 @@ const UploadPhotoElement: React.FC<formElementProps> = ({  }) => {
 
   return (
     <>
-    <Label title='Upload Avatar' />
+    <Label title={title} htmlFor={name} />
     <div className='flex items-center flex-col text-center mt-1 w-full text-neutral-300 bg-neutral/10 py-6 px-4 rounded-md border-dashed border border-neutral-500 hover:bg-neutral/20'>
         <img src={image === "" ? uploadIcon : image} alt="preview image" className={image === "" ? 
             'lg:w-16 lg:h-16 md:w-12 md:h-12 w-8 h-8 bg-neutral/12 lg:p-2 p-1 rounded-md' : 
@@ -48,6 +48,7 @@ const UploadPhotoElement: React.FC<formElementProps> = ({  }) => {
         id="filePicker"
         style={{display: 'none'}}
         onChange={onImageChange}
+        name={name}
         />
     </div>
     {imageFail ? (
