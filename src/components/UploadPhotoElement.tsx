@@ -4,11 +4,12 @@ import infoIcon from "../assets/images/icon-info.svg";
 import Label from './Label';
 
 interface formElementProps {
-    title: string,
-    name: string
+    title: string;
+    name: string;
+    onImageUpload: (imageUrl: string) => void;
 }
 
-const UploadPhotoElement: React.FC<formElementProps> = ({ title, name }) => {
+const UploadPhotoElement: React.FC<formElementProps> = ({ title, name, onImageUpload }) => {
     const [image, setImage] = useState<string>("");
     const [imageFail, setImagefail] = useState<boolean>(false);
 
@@ -16,8 +17,10 @@ const UploadPhotoElement: React.FC<formElementProps> = ({ title, name }) => {
         const file = event.target.files[0];
         
         if (event.target.files && event.target.files[0] && file.size < 500000) {
-          setImage(URL.createObjectURL(event.target.files[0]));
-          setImagefail(false);
+            const imageUrl  = URL.createObjectURL(file);
+            setImage(imageUrl);
+            onImageUpload(imageUrl);
+            setImagefail(false);
         } else if (file.size > 500000) {
             setImagefail(true);
         }
