@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import uploadIcon from "../assets/images/icon-upload.svg";
-import infoIcon from "../assets/images/icon-info.svg";
 import Label from './Label';
 import InformationIcon from './InformationIcon';
 

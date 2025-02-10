@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import FormElement from './FormElement';
 import UploadPhotoElement from './UploadPhotoElement';
 import ErrorText from './ErrorText';
-import infoIcon from "../assets/images/icon-info.svg"
 
 interface FormData {
   avatar: string;
