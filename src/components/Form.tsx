@@ -48,14 +48,14 @@ export default function Form({ onSubmit }: FormProps) {
     if (!formData.email.trim()) {
       newErrors.email = "Email is required.";
     } else if (!emailRegex.test(formData.email)) {
-      newErrors.email = "Invalid email format.";
+      newErrors.email = "Please enter a valid email address.";
     }
 
-    const githubRegex = /^[a-zA-Z0-9-]{3,}$/;
+    const githubRegex = /\B@([a-z0-9](?:-(?=[a-z0-9])|[a-z0-9]){0,38}(?<=[a-z0-9]))/gi;
     if (!formData.github.trim()) {
       newErrors.github = "GitHub username is required.";
     } else if (!githubRegex.test(formData.github)) {
-      newErrors.github = "Invalid GitHub username.";
+      newErrors.github = "Please enter a valid GitHub username.";
     }
 
     setErrors(newErrors);
@@ -77,9 +77,9 @@ export default function Form({ onSubmit }: FormProps) {
         {errors.fullName && <ErrorText errorText={errors.fullName} />}
         <FormElement value={formData.email} name="email" title="Email Address" type="text" onChange={handleChange} placeholder='example@email.com' />
         {errors.email && <ErrorText errorText={errors.email} />}
-        <FormElement value={formData.github} name="github" title="Github Username" type="text" onChange={handleChange} placeholder='yourusername' />
+        <FormElement value={formData.github} name="github" title="Github Username" type="text" onChange={handleChange} placeholder='@yourusername' />
         {errors.github && <ErrorText errorText={errors.github} />}
-        <button type='submit' className='hover:cursor-pointer hover:bg-orange-700 mt-6 inconsolata-bold text-black bg-orange-500 w-full p-2 rounded-md'>Generate My Ticket</button>        
+        <button type='submit' className='hover:cursor-pointer border-2 border-black hover:outline-1 hover:outline-neutral mt-6 inconsolata-bold text-black bg-orange-500 w-full p-2 rounded-md'>Generate My Ticket</button>        
     </form>
   );
 }
