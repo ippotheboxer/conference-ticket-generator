@@ -24,7 +24,7 @@ const Ticket:React.FC<ticketPropTypes> = ({fullName, github, avatar}) => {
                 <p className='text-neutral inconsolata-medium text-base sm:text-lg md:text-2xl xl:text-3xl md:pb-2 sm:pb-1'>{fullName}</p>
                 <div className='flex flex-row'>
                     <img src={githubIcon} alt="Github icon" className='mr-1 w-5 h-5 md:w-6 md:h-6' />
-                    <p className='text-neutral-300 inconsolata-regular text-sm md:text-base xl:text-lg'>@{github}</p>
+                    <p className='text-neutral-300 inconsolata-regular text-sm md:text-base xl:text-lg'>{github}</p>
                 </div>
             </div>
         </div>
